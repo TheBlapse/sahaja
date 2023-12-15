@@ -1,11 +1,55 @@
-<nav class="fixed top-0 w-screen py-6 flex justify-center">
-  <div class="flex flex-row justify-between max-w-screen-sm w-full">
-    <h1 class="text-xl text-lightheading dark:text-darkheading font-[500]">
+<nav
+  class="fixed top-0 w-screen py-3 mt-4 flex justify-center dark:bg-darkbg bg-lightbg bg-opacity-10 dark:bg-opacity-5 backdrop-blur-md"
+>
+  <div
+    class="flex flex-row justify-between px-3 items-center md:px-0 max-w-screen-sm w-full"
+  >
+    <h1
+      class="text-lg md:text-xl text-lightheading dark:text-darkheading font-medium"
+    >
       <a href="/">Sehaj Pasricha.</a>
     </h1>
-    <ul class="flex flex-row gap-4 dark:text-darktext text-lighttext text-base">
-      <a href="/misc">misc</a>
-      <a href="about">about</a>
+    <ul
+      class="nav-links flex flex-row gap-4 dark:text-darktext text-lighttext items-center text-sm md:text-base"
+    >
+      <button class="mobile-menu block md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-menu"
+        >
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+      <button id="theme-switcher">
+        <span id="theme-icon">🌓</span>
+      </button>
+    </ul>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    class="absolute z-[5555] h-screen w-screen hidden flex-row items-start justify-center bg-lightbg dark:bg-darkbg"
+    id="mobile-menu-hidden"
+  >
+    <ul
+      class="nav-links-mobile w-full flex flex-col gap-4 dark:text-darktext text-lighttext text-base text-center"
+    >
+      <button
+        class="text-lightheading dark:text-darkheading self-end pr-16 py-16"
+        id="close-mobile-menu"
+      >
+        X
+      </button>
     </ul>
   </div>
 </nav>
@@ -16,3 +60,107 @@
     opacity: 0.8;
   }
 </style>
+
+<script>
+  const navLinks = [
+    { href: "/misc", text: "misc" },
+    { href: "/about", text: "about" },
+  ];
+
+  const navLinksContainer = document.querySelector(".nav-links");
+  const navLinksMobileContainer = document.querySelector(".nav-links-mobile");
+
+  navLinks.forEach((link) => {
+    const a = document.createElement("a");
+    a.href = link.href;
+    a.textContent = link.text;
+    a.className = "md:block hidden";
+    if (navLinksContainer) {
+      navLinksContainer.insertBefore(a, navLinksContainer.lastElementChild);
+    }
+
+    const aMobile = a.cloneNode(true) as HTMLElement; // Type assertion here
+    aMobile.className = "";
+    if (navLinksMobileContainer) {
+      navLinksMobileContainer.appendChild(aMobile);
+    }
+  });
+
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuHidden = document.querySelector("#mobile-menu-hidden");
+  const closeMobileMenu = document.querySelector("#close-mobile-menu");
+
+  if (mobileMenu) {
+    mobileMenu.addEventListener("click", () => {
+      if (mobileMenuHidden) {
+        mobileMenuHidden.classList.remove("hidden");
+        mobileMenuHidden.classList.add("flex");
+      }
+    });
+  }
+
+  if (closeMobileMenu) {
+    closeMobileMenu.addEventListener("click", () => {
+      if (mobileMenuHidden) {
+        mobileMenuHidden.classList.add("hidden");
+        mobileMenuHidden.classList.remove("flex");
+      }
+    });
+  }
+
+  // Theme Switcher
+
+  const themeSwitcher = document.getElementById("theme-switcher");
+  const themeIcon = document.getElementById("theme-icon");
+
+  function updateThemeIcon(theme: string) {
+    if (!themeIcon) return;
+    if (theme === "dark") {
+      themeIcon.textContent = "🌜";
+    } else if (theme === "light") {
+      themeIcon.textContent = "🌞";
+    } else {
+      themeIcon.textContent = "🌓";
+    }
+  }
+
+  function switchTheme() {
+    const currentTheme = localStorage.getItem("theme") || "system";
+    let newTheme;
+
+    if (currentTheme === "light") {
+      newTheme = "dark";
+    } else if (currentTheme === "dark") {
+      newTheme = "system";
+    } else {
+      newTheme = "light";
+    }
+
+    localStorage.setItem("theme", newTheme);
+    updateThemeIcon(newTheme);
+    applyTheme(newTheme);
+  }
+
+  function applyTheme(theme: string) {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }
+
+  // Initialize theme on load
+  const savedTheme = localStorage.getItem("theme") || "system";
+  applyTheme(savedTheme);
+  updateThemeIcon(savedTheme);
+
+  if (themeSwitcher) {
+    themeSwitcher.addEventListener("click", switchTheme);
+  }
+</script>

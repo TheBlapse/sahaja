@@ -4,10 +4,11 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Sehaj Pasricha">
   <main
-    class="mt-36 flex flex-col w-screen min-h-screen items-center content-center justify-start"
+    class="mt-36 flex flex-col w-screen min-h-screen gap-12 items-center content-center justify-start"
   >
-    <div class="flex flex-col max-w-screen-sm gap-4 w-full">
-      <p class="text-lightheading dark:text-darkheading">
+    <!-- Hero -->
+    <div class="flex flex-col max-w-screen-sm px-3 md:px-0 gap-4 w-full">
+      <p class="text-lightheading dark:text-darkheading text-sm md:text-base">
         Currently in my 20th lap around the sun, and actively wondering how I
         can sight-see a zombie planet. Working on the intersection of machine
         intelligence and computer systems, with a long-term interest in
@@ -55,6 +56,108 @@ import Layout from "../layouts/Layout.astro";
               d="M8 0.626373C3.6 0.626373 0 4.22637 0 8.62637C0 13.0264 3.6 16.6264 8 16.6264C12.4 16.6264 16 13.0264 16 8.62637C16 4.22637 12.44 0.626373 8 0.626373ZM11.6807 12.1864C11.5207 12.4257 11.2407 12.5064 11 12.3464C9.12 11.1864 6.76 10.9457 3.95933 11.5857C3.68067 11.667 3.44 11.4664 3.36 11.2264C3.28 10.9457 3.48 10.7064 3.72 10.6264C6.76 9.94571 9.4 10.2264 11.48 11.5064C11.76 11.6264 11.7993 11.9457 11.6807 12.1864ZM12.6407 9.98637C12.44 10.2664 12.08 10.3864 11.7993 10.1864C9.64 8.86637 6.36 8.46637 3.84 9.26637C3.52067 9.34637 3.16 9.18637 3.08 8.86637C3 8.54637 3.16 8.18571 3.48 8.10571C6.4 7.22637 10 7.66704 12.48 9.18637C12.7207 9.30704 12.84 9.70637 12.6407 9.98637ZM12.7207 7.74637C10.16 6.22637 5.88 6.06637 3.44 6.82704C3.04 6.94637 2.64 6.70637 2.52 6.34637C2.4 5.94571 2.64 5.54637 3 5.42571C5.84 4.58571 10.52 4.74571 13.4807 6.50637C13.84 6.70637 13.96 7.18637 13.76 7.54637C13.5607 7.82704 13.08 7.94571 12.7207 7.74637Z"
             ></path>
           </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <div class="flex flex-col max-w-screen-sm px-3 md:px-0 gap-4 w-full">
+      <div class="flex flex-row gap-x-2 items-center">
+        <h2
+          class="text-lightheading dark:text-darkheading text-lg md:text-xl font-medium"
+        >
+          Work
+        </h2>
+        <hr
+          class="border-lightheading dark:border-darkheading border-[1px] rounded-sm w-full"
+        />
+      </div>
+      <div
+        class="grid w-full justify-between md:grid-cols-3 grid-cols-2 gap-y-6"
+      >
+        <a
+          href="https://github.com/tinygrad/tinygrad"
+          target="_blank"
+          class="flex flex-col gap-1"
+        >
+          <h4
+            class="text-lightheading dark:text-darkheading text-sm md:text-base"
+          >
+            Tinygrad YOLOv8
+          </h4>
+          <p class="text-lighttext dark:text-darktext text-xs md:text-sm">
+            Implemented YOLOv8 from scratch.
+          </p>
+        </a>
+        <a
+          href="https://github.com/tinygrad/tinygrad"
+          target="_blank"
+          class="flex flex-col gap-1"
+        >
+          <h4
+            class="text-lightheading dark:text-darkheading text-sm md:text-base"
+          >
+            Metaviu
+          </h4>
+          <p class="text-lighttext dark:text-darktext text-xs md:text-sm">
+            Ads for the Metaverse.
+          </p>
+        </a>
+        <a
+          href="https://github.com/tinygrad/tinygrad"
+          target="_blank"
+          class="flex flex-col gap-1"
+        >
+          <h4
+            class="text-lightheading dark:text-darkheading text-sm md:text-base"
+          >
+            Astraverse
+          </h4>
+          <p class="text-lighttext dark:text-darktext text-xs md:text-sm">
+            Ads for the Metaverse.
+          </p>
+        </a>
+        <a
+          href="https://github.com/tinygrad/tinygrad"
+          target="_blank"
+          class="flex flex-col gap-1"
+        >
+          <h4
+            class="text-lightheading dark:text-darkheading text-sm md:text-base"
+          >
+            Wayfarers Space
+          </h4>
+          <p class="text-lighttext dark:text-darktext text-xs md:text-sm">
+            A community for unschoolers & unconventionalists.
+          </p>
+        </a>
+        <a
+          href="https://github.com/tinygrad/tinygrad"
+          target="_blank"
+          class="flex flex-col gap-1"
+        >
+          <h4
+            class="text-lightheading dark:text-darkheading text-sm md:text-base"
+          >
+            John Coogan Discord Bot
+          </h4>
+          <p class="text-lighttext dark:text-darktext text-xs md:text-sm">
+            To tackle spam for John Coogan&apos;s Discord.
+          </p>
+        </a>
+        <a
+          href="https://github.com/tinygrad/tinygrad"
+          target="_blank"
+          class="flex flex-col gap-1"
+        >
+          <h4
+            class="text-lightheading dark:text-darkheading text-sm md:text-base"
+          >
+            Edyst
+          </h4>
+          <p class="text-lighttext dark:text-darktext text-xs md:text-sm">
+            Internship at YC backed Edtech startup.
+          </p>
         </a>
       </div>
     </div>
