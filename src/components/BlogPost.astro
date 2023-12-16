@@ -1,0 +1,25 @@
+---
+const allPosts = await Astro.glob("../pages/posts/*.md");
+
+function formatDate(dateString: any) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleString("default", { month: "short" });
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
+}
+---
+
+{
+  allPosts.map((post) => (
+    
+    <div class="w-full flex flex-row justify-between border-b border-b-lighthighlight dark:border-b-darkhighlight">
+      <h3 class="text-lightheading dark:text-darkheading text-sm md:text-base">
+        <a href={post.url}>{post.frontmatter.title}</a>
+      </h3>
+      <p class="text-lighttext dark:text-darktext text-xs md:text-sm font-mono">
+        {formatDate(post.frontmatter.pubDate)}
+      </p>
+    </div>
+  ))
+}

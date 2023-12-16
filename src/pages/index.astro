@@ -1,8 +1,12 @@
 ---
+import BlogPost from "../components/BlogPost.astro";
 import Layout from "../layouts/Layout.astro";
+
+const description =
+  "Currently in my 20th lap around the sun, and actively wondering how I can sight-see a zombie planet. Working on the intersection of machine intelligence and computer systems, with a long-term interest in hardware. Also building wayfarers space - a community of autodidacts and dropouts creating a environment to learn about the world and get back to the future.";
 ---
 
-<Layout title="Sehaj Pasricha">
+<Layout title="Sehaj Pasricha" description={description}>
   <main
     class="mt-36 w-full min-h-screen flex flex-col items-center content-center justify-start align-middle"
   >
@@ -12,12 +16,7 @@ import Layout from "../layouts/Layout.astro";
       <!-- Hero -->
       <div class="flex flex-col gap-4 w-full">
         <p class="text-lightheading dark:text-darkheading text-sm md:text-base">
-          Currently in my 20th lap around the sun, and actively wondering how I
-          can sight-see a zombie planet. Working on the intersection of machine
-          intelligence and computer systems, with a long-term interest in
-          hardware. Also building wayfarers space - a community of autodidacts
-          and dropouts creating a environment to learn about the world and get
-          back to the future.
+          {description}
         </p>
         <div class="flex flex-row gap-5 items-center">
           <a
@@ -79,6 +78,7 @@ import Layout from "../layouts/Layout.astro";
             class="border-lightheading dark:border-darkheading border-[1px] rounded-sm w-full"
           />
         </div>
+        <BlogPost />
       </div>
 
       <!-- Work -->
