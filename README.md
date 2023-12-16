@@ -1,2 +1,3 @@
 # sahaja — a minimal blogfolio template in Astro
-![https://sahaja.bad.al](https://github.com/TheBlapse/sahaja/assets/76247922/1e3ac2a7-2850-43f6-b901-20cad6eae0ba)
+<a href="https://sahaja.bad.al" target="_blank">![image](https://github.com/TheBlapse/sahaja/assets/76247922/b9d058c5-e42c-4d0d-9417-ea29ef2332e9)
+</a>
