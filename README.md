@@ -1,1 +1,1 @@
-# Sehaj Pasricha Website
+# sahaja — minimal portfolio & blog template in Astro
