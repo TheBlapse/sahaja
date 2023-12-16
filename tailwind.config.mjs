@@ -11,7 +11,7 @@ export default {
         lighttext: "#808080",
         lighthighlight: "#AAAAAA",
         // dark theme
-        darkbg: "#1A1A1A",
+        darkbg: "#121212",
         darkheading: "#D9D9D9",
         darktext: "#737373",
         darkhighlight: "#404040",
