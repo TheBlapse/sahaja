@@ -1,1 +1,1 @@
-# sahaja — minimal portfolio & blog template in Astro
+# sahaja — minimal blogfolio template in Astro
