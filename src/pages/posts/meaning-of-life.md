@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogLayout.astro
 title: "The meaning of life might be to play factorio!"
-pubDate: 2023-12-16
+pubDate: 2023-12-23
 description: "The meaning of life might be to play factorio!"
 author: "Sehaj"
 ---

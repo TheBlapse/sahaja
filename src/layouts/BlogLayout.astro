@@ -1,6 +1,14 @@
 ---
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
+
+function formatDate(dateString: any) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleString("default", { month: "short" });
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
+}
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -10,13 +18,29 @@ const { frontmatter } = Astro.props;
     <div
       class="max-w-screen-sm flex flex-col gap-3 px-3 md:px-0 items-center content-center justify-start"
     >
-      <h1
-        class="text-lightheading dark:text-darkheading text-lg md:text-xl font-medium"
+      <div class="w-full flex flex-col gap-2 pb-4 md:pb-6">
+        <h1
+          class="text-lightheading dark:text-darkheading text-lg md:text-xl text-left w-full font-medium"
+        >
+          {frontmatter.title}
+        </h1>
+        <p
+          class="text-lighttext dark:text-darktext text-xs font-mono md:text-sm"
+        >
+          {formatDate(frontmatter.pubDate)}
+        </p>
+      </div>
+      <div
+        class="markdown prose max-w-screen-sm prose-headings:font-medium prose-headings:text-lightheading dark:prose-headings:text-darkheading prose-gray dark:prose-invert"
       >
-        {frontmatter.title}
-      </h1>
-      <p class="text-left w-full">Written by {frontmatter.author}</p>
-      <slot />
+        <slot />
+      </div>
     </div>
   </main>
 </Layout>
+
+<style>
+  .markdown-content p {
+    @apply w-full text-left text-lighttext dark:text-darktext !important;
+  }
+</style>

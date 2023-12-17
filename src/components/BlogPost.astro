@@ -8,11 +8,16 @@ function formatDate(dateString: any) {
   const year = date.getFullYear();
   return `${day} ${month} ${year}`;
 }
+
+allPosts.sort(
+  (a, b) =>
+    Number(new Date(b.frontmatter.pubDate)) -
+    Number(new Date(a.frontmatter.pubDate)),
+);
 ---
 
 {
   allPosts.map((post) => (
-    
     <div class="w-full flex flex-row justify-between border-b border-b-lighthighlight dark:border-b-darkhighlight">
       <h3 class="text-lightheading dark:text-darkheading text-sm md:text-base">
         <a href={post.url}>{post.frontmatter.title}</a>

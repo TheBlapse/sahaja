@@ -6,6 +6,8 @@ description: "Flanuering - most people don't travel, they just increase their ph
 author: "Sehaj"
 ---
 
+![image](https://media4.s-nbcnews.com/i/newscms/2020_41/1617466/meditative-walk-kb-main-201008_515472cddabda351be56b3e4dcbf5582.jpg)
+
 Flânerie, as described by Nassim Taleb in his critique of modern travel, is an art that seems to be fading in the digital age. In his view, most people no longer travel in the true sense of the word; instead, they merely 'increase their phone's storage.' This insightful observation underscores the shift from experiencing the world through direct, immersive engagement to a more passive, digital consumption of places and cultures.
 
 Flânerie, a term that originated in 19th-century France, refers to the act of strolling through a city with no particular destination, allowing the sights, sounds, and atmosphere to guide one's path. It is an aimless wander, a leisurely exploration that values the journey over the destination. The flâneur, or one who engages in flânerie, is an observer of urban life, a connoisseur of the street who finds beauty and intrigue in the everyday.
@@ -17,3 +19,9 @@ This modern travel behavior, as Taleb suggests, is more about accumulating digit
 The philosophy behind flânerie encourages a return to a more mindful and immersive form of travel. It invites travelers to slow down, disconnect from their digital devices, and engage with their surroundings more deeply. By doing so, they can discover the subtle charms and hidden treasures of a place, those that are often overlooked when the focus is on capturing the perfect social media post.
 
 In conclusion, Taleb's perspective on modern travel serves as a call to rediscover the lost art of flânerie. It encourages travelers to embrace the unpredictable and unscripted aspects of exploring new places, to become active participants in the world around them rather than passive collectors of digital souvenirs. In doing so, they can find greater fulfillment and a more authentic connection to the places they visit.
+
+```javascript
+const function () => {
+    console.log("Hello, World!");
+}
+```
